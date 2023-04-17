@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    env_file:
+      - ./.env
+    ports:
+      - '6500:3306'
+    volumes:
+      - mysqlDB:/var/lib/mysql
+volumes:
+  mysqlDB:
